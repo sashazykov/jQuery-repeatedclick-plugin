@@ -20,15 +20,18 @@ $.fn.repeatedclick = function(f, options) {
   
   if (typeof jQuery.repeatedEvents == 'undefined')
     jQuery.repeatedEvents = [];
+  if (typeof jQuery.repeatedElements == 'undefined')
+    jQuery.repeatedElements = [];
   
   jQuery.repeatedEvents.push(f)
+  jQuery.repeatedElements.push(this)
   
   var eventNum = jQuery.repeatedEvents.length - 1;
  
   return this.each(function () {
     
     repeatedEvent = function (eventNum, duration) {
-      jQuery(this).each(jQuery.repeatedEvents[eventNum])
+      jQuery.repeatedElements[eventNum].each(jQuery.repeatedEvents[eventNum])
       repeatedEventTimer = setTimeout(
         'repeatedEvent('+eventNum+', '+(duration > opts.min ? duration * opts.speed : duration)+')', duration)
     }
