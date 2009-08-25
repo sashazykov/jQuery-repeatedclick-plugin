@@ -1,14 +1,3 @@
-/**
-* jQuery repeatedclick
-*
-* Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
-* and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
-*
-* Written by: Alexandr Zykov <alexandrz@gmail.com>
-*
-* Repeated events if holding mouse button
-*
-*/
 jQuery.fn.repeatedclick = function (f, options) {
     var defaults = {
         duration  : 350,
