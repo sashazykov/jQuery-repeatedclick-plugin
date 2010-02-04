@@ -32,12 +32,17 @@ You can also pass arguments::
         min       : 100  // minimum duration
     });
 
+Demonstration
+-------------
+
+http://be-q.com/jQuery-repeatedclick-plugin/demo.html
+
 
 Compatability
 -------------
 
 Tested with the following:
 
-`jQuery`_ 1.2.6 - 1.3.x
+`jQuery`_ 1.2.6 - 1.4.x
 
 .. _jQuery: http://jquery.com/
