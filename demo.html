@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <title>jQuery repeatedclick plugin</title>
+  <style>
+   html { font:1.4em/1.1 Arial, sans-serif }
+   body { margin:1em auto; max-width:25em; }
+   h1 { margin:1em 0; font-size:1.5em }
+   a { color:crimson }   
+   a:visited { text-decoration:none }
+   a:hover { color:mediumspringgreen }
+   .inc {padding: 30px; background-color:mediumspringgreen;}
+  </style>
+  <script src="jquery-1.4.1.js" type="text/javascript"></script>
+  <script src="jquery.repeatedclick.js" type="text/javascript"></script>
+ </head>
+ <body>
+  <h1><a href="http://github.com/alexandrz/jQuery-repeatedclick-plugin">jQuery repeatedclick plugin</a></h1>
+  <p>This plugin allows developers to bind a function to a repeatedclick event which occurs when the mouse button is held. Like all <a href="http://jquery.com/">jQuery</a> functions, it is bound for all matching elements.</p>
+  <p>Repeatedclick event is fired when the pointing device button is clicked over an element. A repeatedclick is defined as a sustained mousedown event over the same screen location. The sequence of these events is:</p>
+  <ul>
+   <li>mousedown</li>
+   <li>repeatedclick</li>
+  </ul>
+  <h2>Demo</h2>
+  <p class="inc"><span>0</span> push here!</p>
+  <script type="text/javascript" charset="utf-8">
+    var cnt = 0;
+    $('.inc').repeatedclick(function () {
+      $(this).find('span').html(cnt++);
+    })
+  </script>
+  <h2>Code</h2>
+  <script src='http://pastie.org/809275.js'></script>
+ </body>
+</html>
