@@ -33,11 +33,11 @@ jQuery.fn.repeatedclick = function (f, options) {
 
     return this.each(function () {
         repeatedEvent = function (eventNum, duration) {
-			var that = this;
-            jQuery.repeatedEvents[eventNum].call(that);
-			repeatedEventTimer = setTimeout(function(){
-				repeatedEvent.call(that,eventNum,duration)
-			},duration);
+			  var that = this;
+        jQuery.repeatedEvents[eventNum].call(that);
+			  repeatedEventTimer = setTimeout(function(){
+				    repeatedEvent.call(that,eventNum,duration > opts.min ? duration * opts.speed : duration)
+				  },duration);
         };
 
         jQuery(this).mousedown(function () {
