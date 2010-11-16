@@ -22,12 +22,7 @@ jQuery.fn.repeatedclick = function(f, options) {
         jQuery.repeatedEvents = [];
     }
 
-    if (typeof jQuery.repeatedElements === 'undefined') {
-        jQuery.repeatedElements = [];
-    }
-
     jQuery.repeatedEvents.push(f);
-    jQuery.repeatedElements.push(this);
 
     var eventNum = jQuery.repeatedEvents.length - 1;
 
