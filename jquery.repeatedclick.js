@@ -1,5 +1,5 @@
 /**
-* jQuery repeatedclick
+* jQuery repeatedclick v1.0.3
 *
 * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
 * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
@@ -36,13 +36,13 @@ jQuery.fn.repeatedclick = function (f, options) {
 			  var that = this;
         jQuery.repeatedEvents[eventNum].call(that);
 			  repeatedEventTimer = setTimeout(function(){
-				    repeatedEvent.call(that,eventNum,duration > opts.min ? duration * opts.speed : duration)
+				    repeatedEvent.call(that, eventNum, duration > opts.min ? duration * opts.speed : duration)
 				  },duration);
         };
 
         jQuery(this).mousedown(function () {
             jQuery.repeatedEventDuration = opts.duration;
-            repeatedEvent.call(this,eventNum, opts.duration);
+            repeatedEvent.call(this, eventNum, opts.duration);
         });
 
         var clearRepeatedEvent = function () {
