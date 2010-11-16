@@ -9,11 +9,11 @@
 * Repeated events if holding mouse button
 *
 */
-jQuery.fn.repeatedclick = function (f, options) {
+jQuery.fn.repeatedclick = function(f, options) {
     var defaults = {
-        duration  : 350,
-        speed     : 0.85,
-        min       : 50
+        duration: 350,
+        speed: 0.85,
+        min: 50
     };
 
     var opts = jQuery.extend(defaults, options);
@@ -31,21 +31,22 @@ jQuery.fn.repeatedclick = function (f, options) {
 
     var eventNum = jQuery.repeatedEvents.length - 1;
 
-    return this.each(function () {
-        repeatedEvent = function (eventNum, duration) {
-			  var that = this;
-        jQuery.repeatedEvents[eventNum].call(that);
-			  repeatedEventTimer = setTimeout(function(){
-				    repeatedEvent.call(that, eventNum, duration > opts.min ? duration * opts.speed : duration)
-				  },duration);
+    return this.each(function() {
+        repeatedEvent = function(eventNum, duration) {
+            var that = this;
+            jQuery.repeatedEvents[eventNum].call(that);
+            repeatedEventTimer = setTimeout(function() {
+                repeatedEvent.call(that, eventNum, duration > opts.min ? duration * opts.speed: duration)
+            },
+            duration);
         };
 
-        jQuery(this).mousedown(function () {
+        jQuery(this).mousedown(function() {
             jQuery.repeatedEventDuration = opts.duration;
             repeatedEvent.call(this, eventNum, opts.duration);
         });
 
-        var clearRepeatedEvent = function () {
+        var clearRepeatedEvent = function() {
             if (typeof repeatedEventTimer !== 'undefined') {
                 clearInterval(repeatedEventTimer);
             }
