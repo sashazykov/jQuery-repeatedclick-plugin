@@ -8,6 +8,10 @@
 *
 * Repeated events if holding mouse button
 *
+* Benvium 16-06-2011: The function run as a result of the repeated click now contains the 'event' 
+* object as a parameter. This means you can check the shiftKey status, for example.
+* Also repeatedEventTimer and repeatedEvent are no longer implicity declared as global vars
+*
 */
 jQuery.fn.repeatedclick = function(f, options) {
     var defaults = {
@@ -26,17 +30,21 @@ jQuery.fn.repeatedclick = function(f, options) {
 
     var eventNum = jQuery.repeatedEvents.length - 1;
 
+    // defined here rather than globally..
+    var repeatedEvent;
+    var repeatedEventTimer;
+
     return this.each(function() {
-        repeatedEvent = function(eventNum, duration) {
+        repeatedEvent = function(eventNum, duration, event) {
             var that = this;
-            jQuery.repeatedEvents[eventNum].call(that);
+            jQuery.repeatedEvents[eventNum].call(that, event);
             repeatedEventTimer = setTimeout(function() {
-                    repeatedEvent.call(that, eventNum, duration > opts.min ? duration * opts.speed: duration)
+                    repeatedEvent.call(that, eventNum, duration > opts.min ? duration * opts.speed: duration, event)
                 }, duration);
         };
 
-        jQuery(this).mousedown(function() {
-            repeatedEvent.call(this, eventNum, opts.duration);
+        jQuery(this).mousedown(function(e) {
+            repeatedEvent.call(this, eventNum, opts.duration, e);
         });
 
         var clearRepeatedEvent = function() {
