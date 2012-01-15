@@ -8,6 +8,7 @@ The ``repeatedclick`` event is fired when the pointing device button is clicked 
 * ``mousedown``
 * ``repeatedclick``
 
+The function run as a result of the repeated click contains the 'event' object as a parameter. This means you can check the shiftKey status, for example.
 
 Example
 -------
