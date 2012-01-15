@@ -1,13 +1,9 @@
 jQuery repeatedclick plugin
 ===========================
 
-This plugin allows developers to bind a function to a ``repeatedclick`` event
-which occurs when the mouse button is held. Like all `jQuery`_ functions, it is
-bound for all matching elements.
+This plugin allows developers to bind a function to a ``repeatedclick`` event which occurs when the mouse button is held. Like all `jQuery`_ functions, it is bound for all matching elements.
 
-The ``repeatedclick`` event is fired when the pointing device button is clicked
-over an element. A ``repeatedclick`` is defined as a sustained ``mousedown``
-event over the same screen location. The sequence of these events is:
+The ``repeatedclick`` event is fired when the pointing device button is clicked over an element. A ``repeatedclick`` is defined as a sustained ``mousedown`` event over the same screen location. The sequence of these events is:
 
 * ``mousedown``
 * ``repeatedclick``
@@ -43,6 +39,6 @@ Compatability
 
 Tested with the following:
 
-`jQuery`_ 1.2.6 - 1.4.x
+`jQuery`_ 1.2.6 - 1.7.x
 
 .. _jQuery: http://jquery.com/
