@@ -1,5 +1,5 @@
 /**
-* jQuery repeatedclick v1.0.4
+* jQuery repeatedclick v1.0.5
 *
 * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
 * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
